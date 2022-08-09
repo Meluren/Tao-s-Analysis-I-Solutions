@@ -1,0 +1,164 @@
+\chapter{Starting at the beginning: the natural numbers}
+
+\section{The Peano axioms}
+No exercises in this section.
+
+
+\section{Addition}
+\begin{enumerate}[Ex. 2.2.1.]
+    % Exercise 2.2.1.
+    \item Fix $b$ and $c$ and induct on $a$. For $a = 0$ we have
+    $(0 + b) + c = b + c = b + (c + 0)$, proving the base case. Now suppose
+    $(a + b) + c = a + (b + c)$. Then,
+    \begin{align*}
+        (a\doubleplus b) + c &= (a + b)\doubleplus + c \\
+                      &= ((a+b)+c)\doubleplus    \\
+                      &= (a + (b+c))\doubleplus \\
+                      &= a\doubleplus + (b+c).
+    \end{align*}
+
+    \qed
+
+    % Exercise 2.2.2.
+    \item First we show existence by induction, starting at $a = 1$. We have 
+    $1 = 0\doubleplus$ by definition. Now suppose there exists a $b$ such that 
+    $a = b\doubleplus$. Then $a\doubleplus = (b\doubleplus)\doubleplus$ will do. 
+    Now for uniqueness. If $a = b\doubleplus$ and $a = b'\doubleplus$ then by 
+    Axiom 2.4 we have $b = b'$.
+
+    \qed
+
+    % Exercise 2.2.3.
+    \item
+    \begin{enumerate}[(a)]
+        \item Since $a = a + 0$ we have $a \geq a$.
+
+        \item Since $a \geq b$ there exists a natural number $m$ such that
+        $a = b + m$. Similarly, since $b \geq c$ there exists a natural number
+        $n$ such that $b = c + n$. Thus, $a = b + m = c + (m + n)$ whence
+        $a \geq c$.
+
+        \item Since $a \geq b$ there exists a natural number $m$ such that
+        $a = b + m$. Similarly, since $b \geq a$ there exists a natural number
+        $n$ such that $b = a + n$. Thus, $a = b + m = a + m + n$ whence
+        $m + n = 0$ by the Cancellation law, and so $m = n = 0$ by Corollary
+        2.2.9.
+
+        \item If $a \geq b$ then $a = b + n$ for some natural number $n$. Thus
+        $a + c = b + c + n$ whence $a + c \geq b + c$. Conversely, if
+        $a + c \geq b + c$ then $a + c = b + c + n$ for some natural 
+        number $n$.  Applying the Cancellation law yields $a = b + n$ 
+        whence $a \geq b$.
+
+        \item If $a < b$ then $b = a + n$ for some natural number $n$. Note that
+        $n \neq 0$ since then we would have $a = b$, which by definition is not
+        the case. Since $n \neq 0$ we can, by Lemma 2.2.10. write $n = m++$ for
+        some unique natural number $m$. Thus $b = a + m\doubleplus = 
+        a\doubleplus + m$ whence $a\doubleplus \leq b$.
+
+        Conversely, if $a\doubleplus \leq b$ then $b = a\doubleplus + n$, so
+        $b = a + n\doubleplus$. The point being that $n \neq 0$ by Axiom 2.3
+        whence $a \neq b$, or in other words, $a < b$.
+
+        \item If $a < b$ then $a\doubleplus \leq b$ so that $b = a\doubleplus
+        + n = a + n\doubleplus$. By Axioms 2.3 $n\doubleplus$ is not zero, and
+        so is positive.
+
+        Conversely, if $b = a + d$ for some $d > 0$ then by Lemma 2.2.10 there
+        exists a unique $c$ such that $c\doubleplus = d$. Thus $b = a + 
+        c\doubleplus = a\doubleplus + c$, whence $a\doubleplus \leq b$ and by 
+        the above exercise $a < b$.
+    \end{enumerate}
+
+    \qed
+
+    % Exercise 2.2.4.
+    \item We have $0 \leq b$ for all $b$ since $b = b + 0$. If $a > b$ then
+    since $a\doubleplus > a$ we have $a\doubleplus > b$ by transitivity.
+    Finally, if $a = b$ then $a\doubleplus = b\doubleplus > b$ since for all
+    $a$ we have, again, $a\doubleplus > a$.
+
+    \qed
+
+    % Exercise 2.2.5.
+    \item Define $Q(n)$ to be the property that $P(m)$ is true for all 
+    $m_0 \leq m < n$. We shall induct on $n$. We have that in the base
+    case $n = 0$ the statement is true vacously. In fact, it is true
+    vacously for all $n \leq m_0$. Now suppose $Q(n)$ holds for $n$, or in 
+    other words, $P(m)$ is true for all $m_0 \leq m < n$. By assumption this 
+    implies $P(m+1)$ is true also, whence $Q(n+1)$ is true. Thus, by the
+    induction principle $Q(n)$ holds for all $n$, whence $P(m)$ hold for all
+    natural numbers $m \geq m_0$.
+
+    \qed
+
+    % Exercise 2.2.6.
+    \item We shall induct on $n$. If $n = 0$ then $P(0)$ is true by assumption
+    and so $P(m)$ is true for all $m \leq 0$. Suppose now that $P(n\doubleplus)$
+    is true. Then by assumption $P(n)$ is true, and so by the induction hypothesis
+    $P(m)$ is true for all $m \leq n$. But $P(n\doubleplus)$ was true also, so
+    $P(m)$ is true for all $m \leq n\doubleplus$.
+
+    \qed
+\end{enumerate}
+
+
+\section{Multiplication}
+\begin{enumerate}[Ex. 2.3.1.]
+    % Exercise 2.3.1.
+    \item First we show $m \times 0 = 0$. By induction on $m$ we have for
+    $m = 0$ that $0 \times 0 = 0$ by the definition of multiplication. If
+    $m \times 0 = 0$ then $m\doubleplus \times 0 = (m \times 0) + 0 = 0$ by
+    the induction hypothesis. Hence, $m \times 0 = 0$ for all $m$.
+
+    Next we show $m \times n\doubleplus = (m\times n) + m$ by induction on $m$.
+    In the base case $m = 0$ we already have $0\times n\doubleplus = 0 = 
+    (m \times 0) + 0$ from the paragraph above. Now suppose 
+    $m \times n\doubleplus = (m \times n) + m$. Then $m\doubleplus \times 
+    n\doubleplus = (m + n\doubleplus) + m$ by definition of multiplication, and
+    by the induction hypothesis this equals $(m + n) + m + m$ which in turn
+    is equal to $(m\doubleplus + n) + m\doubleplus$.
+
+    Finally we show multiplication is commutative. We induct on $n$. In the
+    base case $m \times 0 = 0 \times m$. Suppose $m \times n = n \times m$.
+    Then $m \times n\doubleplus = (m \times n) + m = (n \times m) + m= 
+    (n\doubleplus \times m)$.
+
+    \qed
+
+    % Exercise 2.3.2.
+    \item If $n = 0$ or $m = 0$ then $m \times 0 = 0 \times n = 0$, 
+    respectively, by the above exercise. 
+
+    Conversely, suppose $m > 0$ and $n > 0$. We induct on $m$. In the base case
+    we have $m = 1$ and $1 \times n = n > 0$. Now suppose $m \times n > 0$.
+    Then $m\doubleplus \times n = (m \times n) + m > 0$, by the induction 
+    principle and Proposition 2.2.8.
+
+    \qed
+
+    % Exercise 2.3.3.
+    \item We fix $b$ and $c$ and induct on $a$. In the base case $a = 0$ and
+    $(0 \times b) \times c = 0 = 0 \times (b \times c)$. Now suppose $abc$ is
+    unambiguous. Then $((a+1) \times b) \times c = abc + bc$ by the
+    Distributive law. But also, $(a+1) \times (b \times c) = abc + bc$ by
+    the Distributive law.
+
+    \qed
+
+    % Exercise 2.3.4.
+    \item We have $(a+b)^2 = (a+b)(a+b) = a(a+b) + b(a+b) = a^2 + 2ab + b^2$.
+
+    \qed
+
+    % Exercise 2.3.5.
+    \item We fix $q$ and induct on $n$. In the base case $n = 0$ we have
+    $m = 0$ and $r = 0$. Then $n = 0 = 0q + 0$ and $0 \leq r < q$ since $q$
+    is positive.
+
+    Now suppose $n = mq + r$ and consider $n+1$. Then $n+1 = mq + r + 1$. If
+    $r + 1 < q$ we are done. Otherwise $r = q$ and so $n = (m+1)q + 0$.
+
+    \qed
+
+\end{enumerate}

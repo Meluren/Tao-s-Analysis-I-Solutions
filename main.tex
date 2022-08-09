@@ -1,0 +1,37 @@
+\documentclass{book}
+\usepackage{amsmath, amssymb, braket, enumerate, fancyhdr}
+
+% Re-define the QED symbol to be a solid black square.
+\newcommand{\qed}{\hfill$\blacksquare$}
+
+% French spacing is best spacing.
+\frenchspacing
+
+% Quick commands for sets of integers, rationals, reals, and complex numbers.
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+
+% Re-format paragraphs.
+\setlength{\parindent}{0em}
+\setlength{\parskip}{1em}
+
+% Re-define how headers look.
+\renewcommand{\chaptername}{}
+
+% Define a "double plus" or increment operator.
+\newcommand\doubleplus{\!+\kern-1.1ex+\kern0.8ex}
+
+% Set title, author, and date.
+\title{Analysis I Solutions}
+\author{Hannes Thorsell}
+\date{\today}
+
+
+\begin{document}
+    \maketitle
+    \include{chapter1}
+    \include{chapter2}
+
+\end{document}
