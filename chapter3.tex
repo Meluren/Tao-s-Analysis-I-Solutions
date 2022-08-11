@@ -1,0 +1,276 @@
+\chapter{Set theory}
+
+\section{Fundamentals}
+\begin{enumerate}[Ex. 3.1.1.]
+    % Exercise 3.1.1.
+    \item[Ex. 3.1.1.] Let $A$, $B$, and $C$ be sets. First, $A = A$ for all $A$ since every
+    element of $A$ is an element of $A$. Second, if $A = B$ then $A$ and $B$
+    contain the exact same elements, and so $B = A$. Finally, if $A = B$ and 
+    $B = C$ then every element of $A$ belong to $B$, and every element of $B$
+    belongs to $C$. Hence every element of $A$ belongs to $C$, and vice versa.
+
+    \qed
+
+    % Exercise 3.1.2.
+    \item[Ex. 3.1.2.] We have $\varnothing \neq \Set{\varnothing}$ since the empty set has
+    no elements, but $\Set{\varnothing}$ has one element, namely $\varnothing$.
+    These are both distinct from the set $\Set{\Set{\varnothing}}$ since it
+    contains the element $\Set{\varnothing}$ which both of the other sets lack.
+    All three are distinct from $\Set{\varnothing, \Set{\varnothing}}$ since
+    the latter has the element $\Set{\varnothing}$ which the first two sets
+    lack, and the element $\varnothing$ which the third set lacks.
+
+    \qed
+    
+    % Exercise 3.1.3.
+    \item[Ex. 3.1.3.] First $\Set{a,b} = \Set{a} \cup \Set{b}$ immedtiately by Axiom 3.4.
+    Next, $A \cup A = A \cup \varnothing = \varnothing \cup A = A$ by Axiom 3.4
+    again. Finally, commutativity follows from Axiom 3.4 and commutativity of
+    the logical OR operation.
+
+    \qed
+
+    % Exercise 3.1.4.
+    \item[Ex. 3.1.4.] If $A \subseteq B$ and $B \subseteq A$ then if $x \in A$ then $x \in B$,
+    and if $x \in B$ then $x \in A$. This is exactly Definition 3.1.4. For the final
+    statement we already know $A\subseteq C$, given $A\not\subsetneq B$ and 
+    $B \subsetneq C$. There is some element $x$ in $B$ that is not an element of $A$.
+    Since $B\subseteq C$ (note carefully the symbol used!) we have $x\in C$ and so
+    $A \subsetneq C$.
+
+    \qed
+
+    % Exercise 3.1.5
+    \item[Ex. 3.1.5.] If $A \subseteq B$ then if $x \in A$ also $x \in B$ and so $A \subseteq A\cap B$,
+    whence $A = A \cap B$ for $A\cap B\subseteq A$ by definition.
+
+    If $A\cap B = A$ then if $x \in A\cup B$ then either $x \in B$ and $A \cup B \subseteq B$
+    or $x \in A = A\cap B$ and so $x \in B$ and again $A\cup B\subseteq B$. So $A\cup B = B$
+    since $B \subseteq A\cup B$ by definition.
+
+    Finally, if $A\cup B = B$ we have for any $x \in A$ also $x \in A\cup B = B$ and so
+    $A \subseteq B$.
+
+    \qed
+
+    % Exercise 3.1.6.
+    \item[Ex. 3.1.6.] 
+    \begin{enumerate}[(a)]
+        \item By Lemma 3.1.13 and definition of set intersection.
+        \item By Exercise 3.1.5.
+        \item By part (b) replacing $X$ by $A$ and noting $A\subseteq A$ for all $A$.
+        \item By Exercise 3.3.3. as well as commutativity of $AND$ operation combined wit the
+        definition of set intersection.
+        \item Associativity of unions and intersections follow from associativity of OR and AND,
+        respectively, combined with the definitions of set union and set intersection.
+        \item We show the first equality. The second equality is similar. If $x\in A\cap(B\cup C)$
+        then $x\in A$ and $x\in B\cup C$. If $x\in B$ then $x\in A\cap B$. If $x\in C$ then
+        $x\in A\cap C$. In either case, $x\in (A\cap B)\cup(A\cap C)$. Thus,
+        $A\cap(B\cup C) \subseteq (A\cap B)\cup(A\cap C)$. Conversely, if
+        $x\in (A\cap B)\cup (A\cap C)$ then if $x\in A\cap B$ we have
+        $x\in A\cap(B\cup C)$ for $x\in A$ and $x\in B$. If $x\in A\cap C$ then also
+        $x\in A\cap(B\cup C)$ for $x\in A$ and $x\in C$. Regardless, $(A\cap B)\cup(A\cap C)
+        \subseteq A\cap(B\cup C)$. All in all, $A\cap(B\cup C) = (A\cap B)\cup(A\cap C)$.
+        \item Clearly $A\cup (X-A) \subseteq X$ so we only need show $X\subseteq A \cup (X - A)$.
+        But this is true, since if $x\in X$ then either $x\in A$ or $x\not\in A$. In either case,
+        $x\in A\cup (X - A)$.
+
+        Similarly, clearly $\varnothing \subseteq A\cap(X-A)$, and we need only show $A\cap(X-A)$ is
+        empty. If $x\in A\cap(X - A)$ then $x\in A$ and $x\not\in A$, which is impossible.
+
+        \item We show the first law. The second one is analogous. If $x\in X - (A\cup B)$ then
+        $x\in X$ and $x$ is neither in $A$ nor in $B$. Thus $x\in X-A$ and $x\in X-B$. Thus
+        $x\in (X-A)\cap(X-B)$. Conversely, if $x\in (X-A) \cap (X-B)$ we have $x\in X$ regardless,
+        but also $x\not\in A$ and $x\not\in B$, and so $x\in X-(A\cup B)$.
+    \end{enumerate}
+
+    \qed
+
+    % Exercise 3.1.7.
+    \item[Ex. 3.1.7.] If $x\in A\cap B$ then $x\in A$ and so $A\cap B\subseteq B$. Also, $x\in B$ and so
+    $A\cap B \subseteq B$.
+
+    If $C\subseteq A$ and $C\subseteq B$ we have that if $x\in C$ then $x\in A$ and $x\in B$ and
+    so $x\in A\cap B$. Thus, $C\subseteq A\cap B$. Conversely, if $C\subseteq A\cap B$ then if $x\in C$
+    then $x\in A$ and $x\in B$, and so $C\subseteq A$ and $C\subseteq B$.
+
+    The other case is done analogously.
+
+    \qed
+
+    % Exercise 3.1.8.
+    \item[Ex. 3.1.8.] By the distributive property, $A\cap(A\cup B) = (A\cap A) \cup (A\cap B) = A\cup (A\cap B)$.
+    Clearly $A\subseteq A\cup (A\cap B)$. But also, if $x\in A\cup (A\cap B)$ either $x\in A$ and we
+    are done, or $x\in A\cap B$ and so $x\in A$ and we are done, for in both cases $x\in A$ and so
+    $A\cup (A\cap B) \subseteq A$. All in all, $A = A\cup (A\cap B)$.
+
+    \qed
+
+    % Exercise 3.1.9.
+    \item[Ex. 3.1.9.] Suppose $x \in A$. Then $x\not\in B$ and so $x\in X$ since $X = A\cup B$. Thus
+    $A\subseteq X - B$. Conversely, if $x\in X - B$ then $x\in X$ and $x\not\in B$. Thus
+    $x\in A$ since $X = A\cup B$. Hence, $X- B\subseteq A$. All in all, $A = X - B$. The
+    other case is analogous.
+
+    \qed
+
+    % Exercise 3.1.10.
+    \item[Ex. 3.1.10.] The sets $A-B$ and $A\cap B$ are disjoint for the first
+    contains no elements from $B$ (or is empty) and the second contains element 
+    of $B$ (or is empty). The sets $A -B$ and $B -A$ are disjoint for the first 
+    contains elements of $A$ (or is empty) and the second contains no elements from
+    $A$ (or is empty). The sets $A\cap B$ and $B - A$ are disjoint for the second contains elements
+    from $A$ (or is empty) and the first contains no elements from $A$ (or is empty).
+
+    Now, we have $(A - B) \cup (A\cap B) \cup (B - A) = A\cup B$ since any element of the LHS
+    is an element of exactly one of the three sets, and in either case it must belong to either
+    $A$, $B$, or both. Similarly any element of $A\cup B$ belong either to $A$, $B$, or both, and
+    is thus an element of exactly one of the three sets on the LHS.
+
+    \qed
+
+    % Exercise 3.1.11.
+    \item[Ex. 3.1.11.] Let $A$ be a set, and for each $x\in A$ let $P(x)$ be a property pertaining to $x$.
+    Let us form the statement $Q(x,y)$ which means $P(x)$ is true and $x = y$. Then by the
+    Axiom of Replacement we replace each $x$ by $y$ (which is equal to $x$) such that $P(x)$
+    is true. This is nothing but the Axiom of Specification.
+
+    \qed
+\end{enumerate}
+
+
+\section{Russel's paradox (Optional)}
+\begin{enumerate}[Ex. 3.2.1]
+    % Exercise 3.2.1.
+    \item For each axiom we need only specify predicate $P$. So for Axiom 3.2
+    let $P(x)$ be ``$x$ is a dog and $x$ is not a dog.". h(z) = For Axiom 3.3 let
+    $P$ be $P(x) = y$ for the singleton set $\Set{y}$. For Axiom 3.4 let
+    $P(x)$ be $x\in A$ or $x \in B$. Axiom 3.5 is already selected based on a
+    predicate, we need only add $P(x)$ to be $x\in A$ and $x$ satisfies whatever
+    predicate $Q$ that Axiom 3.5 uses. For Axiom 3.6 let $P(x)$ mean just as in
+    the previous case, but add again that $x\in A$.
+
+    \qed
+
+    % Exercise 3.2.2.
+    \item Let $A$ be a set. If $A\in A$ but $A$ is a set, then we can form
+    the singleton set $\Set{A}$. But by the regularity axiom we would require
+    that one element of $\Set{A}$ either not be a set, which isn't the case,
+    or disjoint from $\Set{A}$, which is not the case.
+
+    \qed
+
+    % Exercise 3.2.3.
+    \item The existence of the universal set is given by a vacuous predicate $P$.
+    Now, suppose we can form a universal set $\Omega$. Then by the axiom of
+    specification the predicate $P$ would then be exactly the predicate described
+    in the axiom of universal specification, operating on this universal set $\Omega$. 
+
+    \qed
+\end{enumerate}
+
+
+\section{Functions}
+\begin{enumerate}[Ex. 3.3.1.]
+    % Exercise 3.3.1.
+    \item The definition is reflexive, for $f = f$ for all $f$, since $f$'s domain
+    it equal to $f$'s domain, and $f(x) = f(x)$ for all $x\in X$. Symmetry follows
+    from symmetry of set equality and equality of objects in the image of $f$.
+    If $f = g$ and $g = h$, then $f$, $g$, and $h$ all have the same domain and
+    range from transitivity of set equality, and $f(x) = g(x) = h(x)$ from
+    transitivity of the objects in the image of $f$ (or $g$ or $h$).
+
+    Finally, for substitution, the domain of $g\circ f$ is the same as
+    $\tilde{g}\circ\tilde{f}$ by set substitution, and the same is true of the domain.
+    Moreover, if $f = \tilde{f}$ and $g = \tilde{g}$ then by substitution in the range
+    the function compositions must be equal.
+
+    Note: All of the above relies on equality defined on the range of $f$, $g$,
+    $\tilde{f}$, and $\tilde{g}$ being well-defined, i.e. satisfying the substitution
+    axiom.
+
+    \qed
+    
+    % Exercise 3.3.2.
+    \item If $x\neq x'$ then $f(x) \neq f(x')$ since $f$ is injective. Thus,
+    since $g$ is also injective, $g(f(x)) \neq g(f(x'))$. The case is similar
+    for surjection.
+
+    \qed
+
+    % Exercise 3.3.3.
+    \item The empty function is vacuously injective. It is surjective (and bijective) 
+    if and only if its range is specified as the empty set.
+
+    \qed
+
+    % Exercise 3.3.4.
+    \item Suppose $g\circ f = g\circ\tilde{f}$. The functions $f$ and $\tilde{f}$
+    have the same domain and range.  Since $g$ is injective, 
+    $g\circ f(x) = g\circ\tilde{f}(x)$ implies $f(x) = \tilde{f}(x)$ for all $x\in X$.
+    It does not hold if we drop the assumption that $g$ is injective, for then
+    $f$ and $\tilde{f}$ may map some $x$ to different elements which $g$ in turn
+    maps to the same element.
+
+    The other case is analogous, with the requirement that $f$ being surjective
+    being mandatory as well.
+
+    \qed
+
+    % Exercise 3.3.5.
+    \item If $f$ is not injective, $f(x) = f(x')$ for some $x\neq x'$. But then
+    $g\circ f(x) = g\circ f(x')$ as well, so it is not injective. It is not
+    necessarily true that $g$ also is injective.
+
+    If $g$ is not surjective then immediately $g\circ f$ is not surjective. It
+    is not necessarily true that $f$ also is surjective.
+
+    \qed
+
+    % Exercise 3.3.6.
+    \item Let $f(x) = y$. Then $f^{-1}(y) = x$ by definition. Thus,
+    $f^{-1}(y) = f^{-1}(f(x)) = x$. Similarly $f(f^{-1}(y)) = y$. We conclude
+    by letting $h = (f^{-1})^{-1}$ and noting that $f^{-1}\circ h(x) = f^{-1}\circ
+    (f^{-1})^{-1}(x) = x$ so that $h = f$. (Here we used the uniqueness of the inverse,
+    but this can easily be shown).
+
+    \qed
+
+    % Exercise 3.3.7.
+    \item The function $g\circ f$ is bijective from Exercise 3.3.2. We also have
+    $g\circ f)^{-1}\circ(g\circ f) = I$ where $I$ is the identity function. Thus,
+    by cancelling on the right, we get $(g\circ f)^{-1} = f^{-1}\circ g^{-1}$.
+
+    \qed
+
+    % Exercise 3.3.8.
+    \item
+    \begin{enumerate}[(a)]
+        \item Suppose $X\subseteq Y\subseteq Z$. Then $\imath_{Y\to Z}(\imath_{X\to Y}(x)) =
+        \imath_{Y\to Z}(x) = x$. 
+
+        \item The domains and ranges being equal is immediate. Now, let $x\in A$. Then
+        $f(\imath_{A\to A}(x)) = f(x) = \imath_{B\to B}(f(x))$.
+
+        \item This is just Exercise 3.3.6.
+
+        \item Define
+        \[ h(z) = \begin{cases}
+            f(z) & z\in A, \\
+            g(z) & z\in B.
+        \end{cases} \]
+
+        This is well-defined since $X$ and $Y$ are disjoint. The range of $h$ is
+        indeed $Z$ since the range of both $f$ and $g$ is $Z$.
+    \end{enumerate}
+
+    \qed
+\end{enumerate}
+
+\section{Images and inverse images}
+
+
+\section{Cartesian products}
+
+
+\section{Cardinality of sets}
