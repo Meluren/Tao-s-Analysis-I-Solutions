@@ -267,7 +267,147 @@
     \qed
 \end{enumerate}
 
+
 \section{Images and inverse images}
+\begin{enumerate}[Ex. 3.4.1.]
+    % Exercise 3.4.1.
+    \item To avoid confusion let $f^{-1}(V)$ denote the image of $V$ under the
+    inverse of $f$, whilst letting $g$ denote the inverse image of $V$ under $f$.
+
+    If $x\in f^{-1}(V)$ then there exists a $y\in V$ such that $f^{-1}(y) = x$,
+    or equivalently $y = f(x)$. But then $x\in g(V)$, by definition, and vice versa.
+
+    \qed
+
+    % Exercise 3.4.2.
+    \item We have $S \subseteq f^{-1}(f(S))$ since if $x\in S$ then $f(x)\in f(S)$,
+    and so $x\in f^{-1}(f(S))$. We also have $f(f^{-1}(U)) \subseteq U$ since if
+    $y \in f(f^{-1}(U))$ then there exists an $x \in f^{-1}(U)$ such that $y = f(x)$,
+    and so $y \in U$.
+
+    \qed
+
+    % Exercise 3.4.3.
+    \item First we show $f(A \cap B) \subseteq f(A) \cap f(B)$. Suppose
+    $f(x)\in f(A\cap B)$. Then $x\in A$ and $x\in B$. Thus $f(x)\in f(A)$
+    and $f(x)\in f(B)$, so $f(x)\in f(A) \cap f(B)$. This cannot be strengthened
+    to an equality. To see why, consider $A = \Set{0}$ and $B=\Set{1}$, and define
+    $f : \Set{0,1}\to \Set{0}$ where $f : 0 \mapsto 0$ and $f : 1\mapsto 0$. Then
+    $f(A\cap B) = f(\varnothing) = \varnothing \neq \Set{0} = \Set{0} \cap \Set{0}
+    = f(A) \cap f(B)$.
+
+    Second we show that $f(A) - f(B) \subseteq f(A - B)$. Suppose $f(x) \in f(A)
+    - f(B)$. Then $x\in A$ but $x \not\in B$. Thus $f(x) \in f(A - B)$. This
+    cannot be strengthened to eqaulity. Consider the above example again, from
+    which we get $\varnothing \neq \Set{0}$.
+
+    Finally, we show that $f(A\cup B) = f(A) \cup f(B)$. Suppose $f(x)\in f(A\cup B)$,
+    and let $x \in A$, say. Then $f(x) \in f(A)\subseteq f(A)\cup f(B)$.
+    Conversely, suppose $f(x)\in f(A)$, say. Then $x\in A \subseteq A \cup B$ and
+    so $f(x)\in f(A\cup B)$.
+
+    \qed
+
+    % Exercise 3.4.4
+    \item We show only the first claim; the others are analogous.
+
+    Suppose $x \in f^{-1}(U \cup V)$. Then $f(x) = y$ for some $y \in U \cup V$,
+    say $y \in U$. Consequently, $x \in f^{-1}(U)$, by definition, and so
+    $x \in f^{-1}(U) \cup f^{-1}(V)$.
+
+    Conversely, if $x \in f^{-1}(U) \cup f^{-1}(V)$, say $x \in f^{-1}(U)$,
+    then there exists a $y \in U \subseteq U \cup V$ such that $f(x) = y$.
+    Thus, by definition, $x \in f^{-1}(U \cup V)$.
+
+    \qed
+
+    % Exercise 3.4.5.
+    \item By Exercise 3.4.2 we need only show $f^{-1}(f(S)) \subseteq S$ if $f$
+    is injective, and $S \subseteq f(f^{-1}(S))$ if $f$ is surjective.
+
+    For the first statement, suppose $x \in f^{-1}(f(S))$. Then $f(x) \in f(S)$.
+    Suppose now that $x \not\in S$. Since $f$ is injective there exists no
+    $x'\in S$ such that $f(x') = f(x)$, but then we would have $f(x) \not\in f(S)$.
+    Thus we must have $x \in S$.
+
+    For the second statement, suppose $y \in S$. Then there exists an $x \in
+    f^{-1}(S)$ such that $f(x) = y$, since $f$ is surjective. But then
+    $y \in f(f^{-1}(S))$.
+
+    \qed
+
+    % Exercise 3.4.6.
+    \item Simply define $A = \Set{f^{-1}(\Set{1}) | f \in \Set{0,1}^X}$.
+    This is precisely the power set of $X$, as there is a one-to-one
+    correspondence between the functions (essentially mapping a truth value
+    whether or not an element is contained in the subset) to subsets of $X$.
+    For example, $f : x \mapsto 0$ for all $x\in X$ is the empty set and
+    $f : x \mapsto 1$ for all $x\in X$ is the entire set $X$.
+
+    \qed
+
+    % Exercise 3.4.7.
+    \item Simply define the set $\Set{{Y'}^{X'} | X'\in P(X), Y'\in P(Y)}$,
+    where $P(A)$ denotes the power set of $A$. This uses the previous exercise
+    and the axiom of specification.
+
+    \qed
+
+    % Exercise 3.4.8.
+    \item Let $A$ and $B$ be sets. Form the pair $\Set{A, B}$. Then, by Axiom 3.11,
+    $A \cup B = \bigcup\Set{A, B}$.
+
+    \qed
+
+    % Exercise 3.4.9.
+    \item If say $y \in \Set{x\in A_\beta | x\in A_\alpha\text{ for all } 
+    \alpha\in I}$, then particularly $y \in A_{\beta'}$, and vice versa.
+
+    The equality (3.4) holds for the same reason.
+
+    \qed
+
+    % Exercise 3.4.10.
+    \item For the first part suppose $x \in \big(\bigcup_{\alpha\in I} A_\alpha\big)
+    \cup \big(\bigcup_{\alpha\in J} A_\alpha\big)$, say $x\in\bigcup_{\alpha\in I} 
+    A_\alpha$. Without loss of generality let $x\in A_\beta$ for some particular
+    $\beta\in I \subseteq I \cup J$. Then $x \in \bigcup_{\alpha\in I\cup J} A_\alpha$.
+
+    Conversely, if $x \in \bigcup_{\alpha\in I\cup J} A_\alpha$ we have $x\in A_\beta$
+    where $\beta \in I \cup J$, say $\beta \in I$. Then $x\in 
+    \bigcup_{\alpha\in I} A_\alpha \subseteq \big(\bigcup_{\alpha\in I} 
+    A_\alpha\big) \cup \big(\bigcup_{\alpha\in J} A_\alpha\big)$.
+
+    For the second part suppose $I$ and $J$ are non-empty (In order to not violate
+    ZF). Then if $x\in \big(\bigcap_{\alpha\in I} A_\alpha\big) \cap 
+    \big(\bigcap_{\alpha\in J} A_\alpha\big)$ we have $x \in A_\beta$ for all
+    $\beta \in I$ and $x\in A_{\beta'}$ for all $\beta' \in J$. Thus $x\in A_\gamma$
+    for all $\gamma$ in $I \cup J$ and so $x\in \bigcap_{\gamma\in I\cup J}
+    A_\gamma$.
+
+    Conversely, if $x\in \bigcap_{\alpha\in I\cup J} A_\alpha$ then $x\in A_\gamma$
+    for all $\gamma \in I\cup J$, that is, for all $\alpha \in I$ and all 
+    $\beta\in J$, we have $x\in A_\alpha$ and $x\in A_\beta$. But this means
+    that $x \in \big(\bigcap_{\alpha\in I} A_\alpha\big) \cap 
+    \big(\bigcap_{\alpha\in J} A_\alpha\big)$.
+
+    \qed
+
+    % Exercise 3.4.11.
+    \item We show only the first claim; the second is analogous.
+
+    If $x \in X - \bigcup_{\alpha \in I} A_\alpha$, then $x \in X$ but
+    $x \not\in A_\alpha$ for \emph{any} $\alpha\in I$. Thus $x\in X - A_\alpha$
+    for all $\alpha \in I$, or in other words, $x\in\bigcap_{\alpha\in I}
+    (X-A_\alpha)$.
+
+    Conversely, if $x \in \bigcap_{\alpha \in I}(X - A_\alpha)$ then
+    $x \in X - A_\alpha$ for all $\alpha \in I$ which means $x \not\in A_\alpha$
+    for \emph{any} $\alpha \in I$. Thus, $x\not\in\bigcup_{\alpha\in I} A_\alpha$
+    and so $x \in X - \bigcup_{\alpha \in I} A_\alpha$.
+
+    \qed
+\end{enumerate}
 
 
 \section{Cartesian products}
